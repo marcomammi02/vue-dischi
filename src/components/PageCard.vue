@@ -24,9 +24,23 @@ export default {
 <style scoped>
   .card-box {
     background-color: #2e3a46;
+    height: 220px;
   }
 
   img {
-    width: 50px;
+    width: 110px;
+    margin-top: 15px
+  }
+
+  .title {
+    color: #ffffff;
+    font-size: 1rem;
+    margin: 10px 0 0;
+  }
+
+  p {
+    color: #726e6a;
+    margin: 0;
+    font-size: .9rem;
   }
 </style>

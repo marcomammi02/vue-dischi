@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <div class="card-container">
+    <div class="card-container mx-auto">
       <ul v-if="arrDischi" class="row row-cols-5 g-3">
         <PageCard v-for="objDisco in arrDischi" :key="objDisco.author"
         :imgUrl="objDisco.poster"
@@ -9,7 +9,7 @@
         :year="objDisco.year"
     />
       </ul>
-      <div v-else>Loading...</div>
+      <div v-else><PageLoading /></div>
     </div>
   </div>
 </template>
@@ -17,11 +17,13 @@
 <script>
 import axios from 'axios';
 import PageCard from '@/components/PageCard.vue';
+import PageLoading from '@/components/PageLoading.vue';
 
 export default {
   name: 'PageMain',
   components: {
     PageCard,
+    PageLoading,
   },
 
   data() {
@@ -35,22 +37,15 @@ export default {
     axios.get(this.urlApi)
       .then((axiosResponse) => {
         this.arrDischi = axiosResponse.data.response;
-        console.log(this.arrDischi);
-        console.log(this.arrDischi[0].author);
       });
   },
 };
 </script>
 
 <style>
-  .main {
-    background-color: #1e2d3b;
-
-    z-index: -1;
-  }
-
   .card-container {
-    max-width: 900px;
+    max-width: 800px;
+    margin-top: 3rem;
 
   }
 </style>
