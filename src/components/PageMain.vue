@@ -30,6 +30,7 @@ export default {
     return {
       arrDischi: null,
       urlApi: 'https://flynn.boolean.careers/exercises/api/array/music',
+      fakeDelay: setTimeout(3 * 1000),
     };
   },
 
